@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  begin_date: 2018-05-26
+  end_date: 2018-05-26
+  fault_tolerance: 1
+  momentum: 1
+  category_id: one
+  app_id: one
+  target_time_min: 1
+  successful: false
+  actual_time_min: 1
+  days_goal_completed: 
+
+two:
+  begin_date: 2018-05-26
+  end_date: 2018-05-26
+  fault_tolerance: 1
+  momentum: 1
+  category_id: two
+  app_id: two
+  target_time_min: 1
+  successful: false
+  actual_time_min: 1
+  days_goal_completed: 

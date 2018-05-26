@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @integration.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @integration.name %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @integration.key %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @integration.details %>
+</p>
+
+<%= link_to 'Edit', edit_integration_path(@integration) %> |
+<%= link_to 'Back', integrations_path %>

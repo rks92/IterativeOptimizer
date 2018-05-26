@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @longterm_goal.category_id %>
+</p>
+
+<p>
+  <strong>Target time min:</strong>
+  <%= @longterm_goal.target_time_min %>
+</p>
+
+<p>
+  <strong>Actual time min:</strong>
+  <%= @longterm_goal.actual_time_min %>
+</p>
+
+<p>
+  <strong>Successful:</strong>
+  <%= @longterm_goal.successful %>
+</p>
+
+<%= link_to 'Edit', edit_longterm_goal_path(@longterm_goal) %> |
+<%= link_to 'Back', longterm_goals_path %>

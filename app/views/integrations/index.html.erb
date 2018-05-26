@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Integrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Name</th>
+      <th>Key</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @integrations.each do |integration| %>
+      <tr>
+        <td><%= integration.user_id %></td>
+        <td><%= integration.name %></td>
+        <td><%= integration.key %></td>
+        <td><%= integration.details %></td>
+        <td><%= link_to 'Show', integration %></td>
+        <td><%= link_to 'Edit', edit_integration_path(integration) %></td>
+        <td><%= link_to 'Destroy', integration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Integration', new_integration_path %>

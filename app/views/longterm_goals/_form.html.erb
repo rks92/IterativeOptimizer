@@ -1,0 +1,37 @@
+<%= form_with(model: longterm_goal, local: true) do |form| %>
+  <% if longterm_goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(longterm_goal.errors.count, "error") %> prohibited this longterm_goal from being saved:</h2>
+
+      <ul>
+      <% longterm_goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category_id_id %>
+    <%= form.text_field :category_id_id, id: :longterm_goal_category_id_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_time_min %>
+    <%= form.text_field :target_time_min, id: :longterm_goal_target_time_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_time_min %>
+    <%= form.text_field :actual_time_min, id: :longterm_goal_actual_time_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :successful %>
+    <%= form.check_box :successful, id: :longterm_goal_successful %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

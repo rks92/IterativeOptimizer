@@ -1,0 +1,67 @@
+<%= form_with(model: weekly_goal, local: true) do |form| %>
+  <% if weekly_goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weekly_goal.errors.count, "error") %> prohibited this weekly_goal from being saved:</h2>
+
+      <ul>
+      <% weekly_goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :begin_date %>
+    <%= form.date_select :begin_date, id: :weekly_goal_begin_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, id: :weekly_goal_end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fault_tolerance %>
+    <%= form.number_field :fault_tolerance, id: :weekly_goal_fault_tolerance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :momentum %>
+    <%= form.number_field :momentum, id: :weekly_goal_momentum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id_id %>
+    <%= form.text_field :category_id_id, id: :weekly_goal_category_id_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :app_id_id %>
+    <%= form.text_field :app_id_id, id: :weekly_goal_app_id_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_time_min %>
+    <%= form.number_field :target_time_min, id: :weekly_goal_target_time_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :successful %>
+    <%= form.check_box :successful, id: :weekly_goal_successful %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_time_min %>
+    <%= form.number_field :actual_time_min, id: :weekly_goal_actual_time_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :days_goal_completed %>
+    <%= form.text_field :days_goal_completed, id: :weekly_goal_days_goal_completed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

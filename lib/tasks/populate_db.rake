@@ -8,7 +8,7 @@ namespace :populate_db do
 	end
 
 	desc "Populate categories"
-	task :categories => :environment do
+	task :categories_and_apps => :environment do
 		#TODO
 		perspective_month =  "&perspective=interval&resolution_time=week&restrict_begin=2018-05-01&restrict_end=2018-05-27"
 		perspective_day =  "&perspective=interval&resolution_time=week&restrict_begin=2018-05-01&restrict_end=2018-05-27"
@@ -28,23 +28,26 @@ namespace :populate_db do
 		end
 
 		category_hash = Hash.new
+		app_hash = Hash.new
 
 		res["rows"].each do |cw|
 			if category_hash[cw[4]].nil?
-				category_hash[cw[4]] = Array.new
+				category_hash[cw[4]] = cw[5]
 			end
 
-			temp_h = Hash.new
-			headers_hash.each do |k, v|
-				temp_h[k] = cw[v]
+			if app_hash[cw[3]].nil?
+				app_hash[cw[3]] = cw[5]
 			end
-
-			category_hash[cw[4]].push(temp_h)
 		end
 
-		category_hash.each do |k, c|
-			puts k + ": " + c[0]["Productivity"].to_s
-			Category.create(name: k, productivity_score: c[0]["Productivity"])
+		category_hash.each do |k, v|
+			puts k + ": " + v.to_s
+			Category.create(name: k, productivity_score: v)
+		end
+
+		app_hash.each do |k, v|
+			puts k + ": " + v.to_s
+			App.create(name: k, productivity_score: v)
 		end
 	end
 end

@@ -26,8 +26,8 @@ end
 category_hash = Hash.new
 
 res["rows"].each do |cw|
-	if category_hash[cw[4]].nil?
-		category_hash[cw[4]] = Array.new
+	if category_hash[cw[3]].nil?
+		category_hash[cw[3]] = Array.new
 	end
 
 	temp_h = Hash.new

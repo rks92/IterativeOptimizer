@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526202609) do
+ActiveRecord::Schema.define(version: 20180526194335) do
 
   create_table "apps", force: :cascade do |t|
     t.string "name"
@@ -40,12 +40,14 @@ ActiveRecord::Schema.define(version: 20180526202609) do
 
   create_table "longterm_goals", force: :cascade do |t|
     t.integer "category_id"
+    t.integer "user_id"
     t.integer "target_time_min"
     t.integer "actual_time_min"
     t.boolean "successful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_longterm_goals_on_category_id"
+    t.index ["user_id"], name: "index_longterm_goals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180526202609) do
     t.integer "momentum"
     t.integer "category_id"
     t.integer "app_id"
+    t.integer "user_id"
     t.integer "target_time_min"
     t.boolean "successful"
     t.integer "actual_time_min"
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180526202609) do
     t.datetime "updated_at", null: false
     t.index ["app_id"], name: "index_weekly_goals_on_app_id"
     t.index ["category_id"], name: "index_weekly_goals_on_category_id"
+    t.index ["user_id"], name: "index_weekly_goals_on_user_id"
   end
 
 end

@@ -1,0 +1,30 @@
+Check base line for each productive level
+Check base line for each type of activity (Categorisation)
+Set which ones you would like to increase
+Set weekly targets
+	-> Set daily targets
+Recalculating targets
+	-> If 5/7 completed -> Increase by X%
+	-> If <3 completed -> Decrease by X%
+
+X = 
+	if (last week successful)
+		X = X * (1 + FT)
+	elsif (last week unsuccessful)
+		X = X * (1 - FT)
+
+0 < FT < 1
+FT = 0.1 (Default)
+	if (last week successful)
+		FT += ((Momentum) * FT)
+	elsif (last week unsuccessful && Last Successful week (FT))
+		FT -= ((Last Successful week (FT) + CurrFT)/2)
+	else
+		FT = FT/2
+
+Momentum = 1 (Default)
+	If (last week successful){
+		Momentum += 0.01
+	} else {
+		Momentum -= 0.01
+	}

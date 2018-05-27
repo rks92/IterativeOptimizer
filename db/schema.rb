@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20180526202609) do
   create_table "apps", force: :cascade do |t|
     t.string "name"
     t.integer "productivity_score"
-    t.integer "category_id_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id_id"], name: "index_apps_on_category_id_id"
+    t.index ["category_id"], name: "index_apps_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -29,23 +29,23 @@ ActiveRecord::Schema.define(version: 20180526202609) do
   end
 
   create_table "integrations", force: :cascade do |t|
-    t.integer "user_id_id"
+    t.integer "user_id"
     t.string "name"
     t.string "key"
     t.string "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_integrations_on_user_id_id"
+    t.index ["user_id"], name: "index_integrations_on_user_id"
   end
 
   create_table "longterm_goals", force: :cascade do |t|
-    t.integer "category_id_id"
+    t.integer "category_id"
     t.integer "target_time_min"
     t.integer "actual_time_min"
     t.boolean "successful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id_id"], name: "index_longterm_goals_on_category_id_id"
+    t.index ["category_id"], name: "index_longterm_goals_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,16 +59,16 @@ ActiveRecord::Schema.define(version: 20180526202609) do
     t.date "end_date"
     t.integer "fault_tolerance"
     t.integer "momentum"
-    t.integer "category_id_id"
-    t.integer "app_id_id"
+    t.integer "category_id"
+    t.integer "app_id"
     t.integer "target_time_min"
     t.boolean "successful"
     t.integer "actual_time_min"
     t.integer "days_goal_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["app_id_id"], name: "index_weekly_goals_on_app_id_id"
-    t.index ["category_id_id"], name: "index_weekly_goals_on_category_id_id"
+    t.index ["app_id"], name: "index_weekly_goals_on_app_id"
+    t.index ["category_id"], name: "index_weekly_goals_on_category_id"
   end
 
 end

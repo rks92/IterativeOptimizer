@@ -3,7 +3,7 @@ class CreateApps < ActiveRecord::Migration[5.1]
     create_table :apps do |t|
       t.string :name
       t.integer :productivity_score
-      t.references :category_id, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

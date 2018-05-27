@@ -17,7 +17,7 @@ class IntegrationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create integration" do
     assert_difference('Integration.count') do
-      post integrations_url, params: { integration: { details: @integration.details, key: @integration.key, name: @integration.name, user_id_id: @integration.user_id_id } }
+      post integrations_url, params: { integration: { details: @integration.details, key: @integration.key, name: @integration.name, user_id: @integration.user_id } }
     end
 
     assert_redirected_to integration_url(Integration.last)
@@ -34,7 +34,7 @@ class IntegrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update integration" do
-    patch integration_url(@integration), params: { integration: { details: @integration.details, key: @integration.key, name: @integration.name, user_id_id: @integration.user_id_id } }
+    patch integration_url(@integration), params: { integration: { details: @integration.details, key: @integration.key, name: @integration.name, user_id: @integration.user_id } }
     assert_redirected_to integration_url(@integration)
   end
 

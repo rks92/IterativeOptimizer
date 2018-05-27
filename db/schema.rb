@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20180526194335) do
   create_table "weekly_goals", force: :cascade do |t|
     t.date "begin_date"
     t.date "end_date"
-    t.integer "fault_tolerance"
-    t.integer "momentum"
+    t.float "fault_tolerance"
+    t.float "momentum"
     t.integer "category_id"
     t.integer "app_id"
     t.integer "user_id"

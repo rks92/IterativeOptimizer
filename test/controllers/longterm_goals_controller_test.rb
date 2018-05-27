@@ -17,7 +17,7 @@ class LongtermGoalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create longterm_goal" do
     assert_difference('LongtermGoal.count') do
-      post longterm_goals_url, params: { longterm_goal: { actual_time_min: @longterm_goal.actual_time_min, category_id_id: @longterm_goal.category_id_id, successful: @longterm_goal.successful, target_time_min: @longterm_goal.target_time_min } }
+      post longterm_goals_url, params: { longterm_goal: { actual_time_min: @longterm_goal.actual_time_min, category_id: @longterm_goal.category_id, successful: @longterm_goal.successful, target_time_min: @longterm_goal.target_time_min } }
     end
 
     assert_redirected_to longterm_goal_url(LongtermGoal.last)
@@ -34,7 +34,7 @@ class LongtermGoalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update longterm_goal" do
-    patch longterm_goal_url(@longterm_goal), params: { longterm_goal: { actual_time_min: @longterm_goal.actual_time_min, category_id_id: @longterm_goal.category_id_id, successful: @longterm_goal.successful, target_time_min: @longterm_goal.target_time_min } }
+    patch longterm_goal_url(@longterm_goal), params: { longterm_goal: { actual_time_min: @longterm_goal.actual_time_min, category_id: @longterm_goal.category_id, successful: @longterm_goal.successful, target_time_min: @longterm_goal.target_time_min } }
     assert_redirected_to longterm_goal_url(@longterm_goal)
   end
 

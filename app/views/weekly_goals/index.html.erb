@@ -5,11 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>App Name</th>
+      <th>Category Name</th>
       <th>Begin date</th>
       <th>End date</th>
       <th>Fault tolerance</th>
       <th>Momentum</th>
-      <th>Category</th>
+      <th>Category ID</th>
       <th>App</th>
       <th>Target time min</th>
       <th>Successful</th>
@@ -22,6 +24,8 @@
   <tbody>
     <% @weekly_goals.each do |weekly_goal| %>
       <tr>
+        <td><%= weekly_goal.app.name %></td>
+        <td><%= weekly_goal.category.name %></td>
         <td><%= weekly_goal.begin_date %></td>
         <td><%= weekly_goal.end_date %></td>
         <td><%= weekly_goal.fault_tolerance %></td>

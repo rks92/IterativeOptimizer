@@ -1,3 +1,3 @@
 class LongtermGoal < ApplicationRecord
-  belongs_to :category_id
+  belongs_to :category
 end

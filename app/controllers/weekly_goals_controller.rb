@@ -4,7 +4,7 @@ class WeeklyGoalsController < ApplicationController
   # GET /weekly_goals
   # GET /weekly_goals.json
   def index
-    @weekly_goals = WeeklyGoal.all
+    @weekly_goals = WeeklyGoal.includes(:category).includes(:app).all.order(actual_time_min: :desc)
   end
 
   # GET /weekly_goals/1
@@ -69,6 +69,6 @@ class WeeklyGoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weekly_goal_params
-      params.require(:weekly_goal).permit(:begin_date, :end_date, :fault_tolerance, :momentum, :category_id_id, :app_id_id, :target_time_min, :successful, :actual_time_min, :days_goal_completed)
+      params.require(:weekly_goal).permit(:begin_date, :end_date, :fault_tolerance, :momentum, :category_id, :app_id, :target_time_min, :successful, :actual_time_min, :days_goal_completed)
     end
 end

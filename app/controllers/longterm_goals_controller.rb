@@ -69,6 +69,6 @@ class LongtermGoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def longterm_goal_params
-      params.require(:longterm_goal).permit(:category_id_id, :target_time_min, :actual_time_min, :successful)
+      params.require(:longterm_goal).permit(:category_id, :target_time_min, :actual_time_min, :successful)
     end
 end

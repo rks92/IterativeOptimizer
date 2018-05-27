@@ -17,7 +17,7 @@ class WeeklyGoalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create weekly_goal" do
     assert_difference('WeeklyGoal.count') do
-      post weekly_goals_url, params: { weekly_goal: { actual_time_min: @weekly_goal.actual_time_min, app_id_id: @weekly_goal.app_id_id, begin_date: @weekly_goal.begin_date, category_id_id: @weekly_goal.category_id_id, days_goal_completed: @weekly_goal.days_goal_completed, end_date: @weekly_goal.end_date, fault_tolerance: @weekly_goal.fault_tolerance, momentum: @weekly_goal.momentum, successful: @weekly_goal.successful, target_time_min: @weekly_goal.target_time_min } }
+      post weekly_goals_url, params: { weekly_goal: { actual_time_min: @weekly_goal.actual_time_min, app_id: @weekly_goal.app_id, begin_date: @weekly_goal.begin_date, category_id: @weekly_goal.category_id, days_goal_completed: @weekly_goal.days_goal_completed, end_date: @weekly_goal.end_date, fault_tolerance: @weekly_goal.fault_tolerance, momentum: @weekly_goal.momentum, successful: @weekly_goal.successful, target_time_min: @weekly_goal.target_time_min } }
     end
 
     assert_redirected_to weekly_goal_url(WeeklyGoal.last)
@@ -34,7 +34,7 @@ class WeeklyGoalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update weekly_goal" do
-    patch weekly_goal_url(@weekly_goal), params: { weekly_goal: { actual_time_min: @weekly_goal.actual_time_min, app_id_id: @weekly_goal.app_id_id, begin_date: @weekly_goal.begin_date, category_id_id: @weekly_goal.category_id_id, days_goal_completed: @weekly_goal.days_goal_completed, end_date: @weekly_goal.end_date, fault_tolerance: @weekly_goal.fault_tolerance, momentum: @weekly_goal.momentum, successful: @weekly_goal.successful, target_time_min: @weekly_goal.target_time_min } }
+    patch weekly_goal_url(@weekly_goal), params: { weekly_goal: { actual_time_min: @weekly_goal.actual_time_min, app_id: @weekly_goal.app_id, begin_date: @weekly_goal.begin_date, category_id: @weekly_goal.category_id, days_goal_completed: @weekly_goal.days_goal_completed, end_date: @weekly_goal.end_date, fault_tolerance: @weekly_goal.fault_tolerance, momentum: @weekly_goal.momentum, successful: @weekly_goal.successful, target_time_min: @weekly_goal.target_time_min } }
     assert_redirected_to weekly_goal_url(@weekly_goal)
   end
 

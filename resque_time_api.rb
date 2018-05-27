@@ -26,18 +26,20 @@ end
 category_hash = Hash.new
 
 res["rows"].each do |cw|
-	if category_hash[cw[3]].nil?
-		category_hash[cw[3]] = Array.new
+	if category_hash[cw[4]].nil?
+		category_hash[cw[4]] = Array.new
 	end
 
 	temp_h = Hash.new
 	headers_hash.each do |k, v|
 		temp_h[k] = cw[v]
 	end
+	puts temp_h
 
 	category_hash[cw[4]].push(temp_h)
 end
 
 category_hash.each do |k, c|
 	puts k + ": " + c[0]["Productivity"].to_s
+	puts c.length
 end

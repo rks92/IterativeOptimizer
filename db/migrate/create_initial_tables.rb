@@ -43,8 +43,8 @@ class CreateCategories < ActiveRecord::Migration[5.1]
     create_table :weekly_goals do |t|
       t.date :begin_date
       t.date :end_date
-      t.integer :fault_tolerance
-      t.integer :momentum
+      t.float :fault_tolerance
+      t.float :momentum
       t.references :category, foreign_key: true
       t.references :app, foreign_key: true
       t.references :user, foreign_key: true

@@ -69,6 +69,6 @@ class IntegrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def integration_params
-      params.require(:integration).permit(:user_id_id, :name, :key, :details)
+      params.require(:integration).permit(:user_id, :name, :key, :details)
     end
 end

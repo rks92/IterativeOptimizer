@@ -18,6 +18,18 @@ class WeeklyGoal < ApplicationRecord
   end
 
   def self.weekly_category_sums
-  	WeeklyGoal.includes(:category).group(:begin_date, "categories.name").order('begin_date', 'sum_actual_time_min desc').sum(:actual_time_min)
+  	results = WeeklyGoal.includes(:category).group(:begin_date, "categories.name").order('begin_date desc', 'sum_actual_time_min desc').sum(:actual_time_min)
+  
+    to_ret = Hash.new
+
+    results.each do |k, v|
+      if to_ret[k[0]].nil?
+        to_ret[k[0]] = Hash.new
+      end
+      
+      to_ret[k[0]][k[1]] = v
+    end
+
+    return to_ret
   end
 end

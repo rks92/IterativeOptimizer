@@ -9,8 +9,8 @@ namespace :populate_db do
 
 	desc "Populate RescueTime data"
 	task :rt_data => :environment do
-		perspective_month =  "&perspective=interval&resolution_time=week&restrict_begin=2018-05-01&restrict_end=2018-05-27"
-		perspective_day =  "&perspective=interval&resolution_time=week&restrict_begin=2018-05-01&restrict_end=2018-05-27"
+		perspective_month =  "&perspective=interval&resolution_time=week&restrict_begin=2018-01-01&restrict_end=2018-05-27"
+		perspective_day =  "&perspective=interval&resolution_time=week&restrict_begin=2018-01-01&restrict_end=2018-05-27"
 
 		url = "https://www.rescuetime.com/anapi/data?key=B63MdTMbYtQQ3jNlMwke2NQsKTVWlUfwAHT71hEd&format=json
 		"

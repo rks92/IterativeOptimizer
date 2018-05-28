@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
 	def index
-		@last_month_stats
+		@weekly_stats = WeeklyGoal.weekly_category_sums
 	end
 end

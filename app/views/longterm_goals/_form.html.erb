@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id, id: :longterm_goal_category_id %>
+    <%= collection_select(:longterm_goal, :category_id, Category.all, :id, :name) %>
   </div>
 
   <div class="field">

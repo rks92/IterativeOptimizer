@@ -1,0 +1,18 @@
+<% @week_start_dates = @weekly_stats.keys %>
+<table>
+	<tr>
+		<th> Date </th>
+		<th> Category </th>
+		<th> Sum </th>
+	</tr>
+
+	<% @week_start_dates.each do |d| %>
+		<% @weekly_stats[d].each do |c| %>
+			<tr>
+				<td> <%= d %> </td>
+				<td> <%= c[0] %> </td>
+				<td> <%= c[1] %> </td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>
